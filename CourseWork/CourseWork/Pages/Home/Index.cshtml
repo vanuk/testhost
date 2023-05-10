@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Http
+    @{
+            var searchId = ViewContext.HttpContext.Request.Form["id"];
+
+        }
+<h2>Persons</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>age</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+        @foreach (var item in Model)
+        {
+            if ( item.CooperativeEmail.ToString() == searchId)
+            {
+                <tr>
+                    
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    
+                </tr>
+            }
+        }
+    </tbody>
+</table>
